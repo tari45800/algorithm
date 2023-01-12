@@ -18,9 +18,3 @@ function solution(babbling) {
 
   return answer;
 }
-
-
-
-let babbling = ["ayaye", "uuuma", "ye", "yemawoo", "ayaa"]
-
-alert(solution(babbling));
