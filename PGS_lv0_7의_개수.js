@@ -3,6 +3,7 @@ function solution(array) {
   //문자열의 길이만큼 반복한다.
       // 문자열의 반복횟수번째 문자가 7이라면 answer증가시킨다.
   
+      
   var answer = 0;
   
   let str = array.join('');
