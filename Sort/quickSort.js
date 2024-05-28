@@ -49,10 +49,10 @@ const partition = (arr, low, high) => {
   for (let j = low; j < high; j++) {
     if (arr[j] <= pivot) {
       i++;
-      [arr[i], arr[j]] = [arr[j], arr[i]]; // Swap
+      [arr[i], arr[j]] = [arr[j], arr[i]];
     }
   }
-  [arr[i + 1], arr[high]] = [arr[high], arr[i + 1]]; // Swap pivot to correct position
+  [arr[i + 1], arr[high]] = [arr[high], arr[i + 1]];
   return i + 1;
 };
 
