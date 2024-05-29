@@ -28,32 +28,75 @@ const quickSort1 = (arr, node = 0) => {
 
 // const sortedArr = quickSort(arr);
 // console.log(sortedArr);
+// 첫번째 코드는 메모리 낭비가 심하다.
 
-const quickSort2 = (arr, low = 0, high = arr.length - 1) => {
-  if (low < high) {
-    const pivotIndex = partition(arr, low, high);
+//=================================================================
+// 수도코드
 
-    console.log("===== Pivot Index: " + pivotIndex + " =====");
-    console.log("Array: " + arr);
+// pivot 변수를 만든다.
+// start와 end 포인터를 만든다.
 
-    quickSort2(arr, low, pivotIndex - 1);
-    quickSort2(arr, pivotIndex + 1, high);
-  }
-  return arr;
-};
+// start와 end 포인터가 엇갈릴 때까지 포인터를 움직인다.
+// 만약 start 포인터의 값이 pivot보다 크다면 포인터를 멈춘다.
+// 만약 end 포인터의 값이 pivot보다 작다면 포인터를 멈춘다.
+// 만약 start와 end포인터가 엇갈리지 않았다면
+// 현제 포인터들이 가리키고 있는 값을 스왑한다.
 
-const partition = (arr, low, high) => {
-  const pivot = arr[high];
-  let i = low - 1;
+// 만약 왼쪽 끝과 end 포인터 사이에 값이 있다면
+// 이 배열을 가지고 치환하는 코드를 제귀한다.
 
-  for (let j = low; j < high; j++) {
-    if (arr[j] <= pivot) {
-      i++;
-      [arr[i], arr[j]] = [arr[j], arr[i]];
+// start포인터와 오른쪽 끝 사이에 값이 있다면
+// 이 배열을 가지고 치환하는 코드를 제귀한다.
+
+// 배열을 반환한다.
+
+// 손코딩
+const quickSort2 = (arr, left = 0, right = arr.length - 1) => {
+  const pivot = arr[left];
+  // 새로운 시작점과 포인터의 위치를 구분하기 위해 선언
+  let startPointer = left;
+  let endPointer = right;
+
+  // start와 end 포인터가 엇갈릴 때까지 포인터를 움직인다.
+  while (startPointer <= endPointer) {
+    // 만약 start 포인터의 값이 pivot보다 크거나 같다면 포인터를 멈춘다.
+    while (arr[startPointer] < pivot) {
+      startPointer++;
+    }
+
+    // 만약 end 포인터의 값이 pivot보다 작거나 같다면 포인터를 멈춘다.
+    while (arr[endPointer] > pivot) {
+      endPointer--;
+    }
+
+    // 만약 start와 end포인터가 엇갈리지 않았다면
+    // 현제 포인터들이 가리키고 있는 값을 스왑한다.
+    // 그리고 포인터의 위치를 한 칸씩 이동한다.
+    if (startPointer <= endPointer) {
+      [arr[startPointer], arr[endPointer]] = [
+        arr[endPointer],
+        arr[startPointer],
+      ];
+
+      startPointer++;
+      endPointer--;
     }
   }
-  [arr[i + 1], arr[high]] = [arr[high], arr[i + 1]];
-  return i + 1;
+
+  // 만약 왼쪽 끝과 end 포인터 사이에 값이 있다면
+  // 이 배열을 가지고 치환하는 코드를 제귀한다.
+  if (left < endPointer) {
+    quickSort2(arr, left, endPointer);
+  }
+
+  // start포인터와 오른쪽 끝 사이에 값이 있다면
+  // 이 배열을 가지고 치환하는 코드를 제귀한다.
+  if (startPointer < right) {
+    quickSort2(arr, startPointer, right);
+  }
+
+  // 배열을 반환한다.
+  return arr;
 };
 
 const arr = [5, 3, 8, 4, 9, 1, 6, 2, 7, 10];
