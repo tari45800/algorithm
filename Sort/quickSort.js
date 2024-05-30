@@ -29,6 +29,7 @@ const quickSort1 = (arr, node = 0) => {
 // const sortedArr = quickSort(arr);
 // console.log(sortedArr);
 // 첫번째 코드는 메모리 낭비가 심하다.
+// 따라사 아래의 코드를 참고하자.
 
 //=================================================================
 // 수도코드
@@ -50,7 +51,6 @@ const quickSort1 = (arr, node = 0) => {
 
 // 배열을 반환한다.
 
-// 손코딩
 const quickSort2 = (arr, left = 0, right = arr.length - 1) => {
   const pivot = arr[left];
   // 새로운 시작점과 포인터의 위치를 구분하기 위해 선언
