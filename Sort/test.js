@@ -1,8 +1,17 @@
-const solution = (m) => {
-  return m < 5500 ? [0, m] : [~~(m / 5500), m % 5500];
-};
-console.log(solution(150000));
+const solution = (n) => {
+  //const arr = Array.from({ length: n }, () => Array(n).fill(0));
+  const arr1 = Array.from(Array(5), () => new Array(2));
+  const arr = new Array(5).fill(0).map(() => new Array(4));
+  const arr5 = Array.from(new Array(ROW), (_) => new Array(COLUMN).fill(null));
 
+  return arr;
+};
+console.log(solution(5));
+
+// 2 3
+// 3 5
+// 4 7
+// 5 9
 /*
 // 옷가게 할인 받기
 const solution = (n) => {
