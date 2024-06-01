@@ -1,5 +1,6 @@
 const solution = (n) => {
   //const arr = Array.from({ length: n }, () => Array(n).fill(0));
+  // 종류
   const arr1 = Array.from(Array(5), () => new Array(2));
   const arr = new Array(5).fill(0).map(() => new Array(4));
   const arr5 = Array.from(new Array(ROW), (_) => new Array(COLUMN).fill(null));
