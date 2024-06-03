@@ -1,3 +1,11 @@
+// 개미 군단
+const solution = (n) => {
+
+};
+console.log(solution(5));
+
+// 이차원 배열 공부하세요
+/*
 const solution = (n) => {
   //const arr = Array.from({ length: n }, () => Array(n).fill(0));
   // 종류
@@ -8,6 +16,7 @@ const solution = (n) => {
   return arr;
 };
 console.log(solution(5));
+*/
 
 // 2 3
 // 3 5
