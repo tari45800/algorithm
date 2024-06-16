@@ -1,15 +1,38 @@
-//
-//
 //============================================================================================================
-//
-// 8:22
-// 8:
+/*
+// 접미사인지 확인하기
+// 9:28
+// 9:35
 
-const solution = (n, k) => {
-  return arr;
+const solution = (my_string, is_suffix) => {
+  return Number(my_string.includes(is_suffix, my_string.length - is_suffix.length));
 };
 
-console.log(solution(10, 3));
+console.log(solution('banana', 'nan'));
+// 기가맥히는 풀이
+// 기본 기능을 활용하자;;
+const solution = (str, suff) => str.endsWith(suff) ? 1 : 0
+*/
+
+//============================================================================================================
+/*
+// 문자열의 앞의 n글자
+// 9:19
+// 9:26
+
+const solution = (my_string, n) => {
+  const arr = [...my_string].filter((e, i) => i < n);
+  return arr.join('');
+};
+
+console.log(solution('ProgrammerS123', 11));
+
+// 기가맥히는 풀이
+// 조금 더 기본 기능을 활용하자.
+function solution(my_string, n) {
+   return my_string.slice(0, n)
+}
+*/
 //
 
 // ============================================================================================================
