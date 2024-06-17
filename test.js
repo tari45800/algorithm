@@ -1,5 +1,88 @@
 //============================================================================================================
 
+// 원소들의 곱과 합
+// 11:26
+// 11: 31
+
+const solution = (num_list) => {};
+
+console.log(solution([3, 4, 5, 2, 1]));
+//============================================================================================================
+
+// 이어 붙인 수
+// 11:26
+// 11: 31
+/*
+const solution = (num_list) => {
+  let odd = "";
+  let even = "";
+  num_list.forEach((e) => {
+    if (e % 2 === 0) {
+      even += e;
+    } else {
+      odd += e;
+    }
+  });
+
+  return Number(odd) + Number(even);
+};
+
+console.log(solution([3, 4, 5, 2, 1]));
+//============================================================================================================
+
+// 마지막 두 원소
+// 11:26
+// 11:31
+/*
+const solution = (num_list) => {
+  return [
+    ...num_list,
+    num_list[num_list.length - 2] < num_list[num_list.length - 1]
+      ? num_list[num_list.length - 1] - num_list[num_list.length - 2]
+      : num_list[num_list.length - 1] * 2,
+  ];
+};
+
+console.log(solution([2, 1, 6]));
+
+// 기가맥히는 풀이
+function solution(num_list) {
+    const [a, b] = [...num_list].reverse();
+    return [...num_list, a > b ? (a-b):a*2];
+}
+//============================================================================================================
+
+// 수 조작하기 1
+// 10:49
+// 11:12
+/*
+const solution = (n, control) => {
+  const w = control.match(/w/g).length;
+  const s = -control.match(/s/g).length;
+  const d = control.match(/d/g).length * 10;
+  const a = -control.match(/a/g).length * 10;
+
+  return n + w + s + d + a;
+};
+
+console.log(solution(0, "wsdawsdassw"));
+//============================================================================================================
+
+// 글자 이어 붙여 문자열 만들기
+// 10:28
+// 10:33
+/*
+const solution = (my_string, index_list) => {
+  const arr = index_list.map((e) => my_string[e]);
+  return arr.join("");
+};
+
+console.log(
+  solution("cvsgiorszzzmrpaqpe", [16, 6, 5, 3, 12, 14, 11, 11, 17, 12, 7])
+);
+*/
+//============================================================================================================
+
 // 문자열 뒤의 n글자
 // 9:39
 // 9:42
