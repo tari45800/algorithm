@@ -4,7 +4,16 @@
 // 9:03
 // 9:
 
-const solution = (num_list) => {};
+const solution = (num_list) => {
+  let a = 1;
+  let b = 0;
+  num_list.forEach((e) => {
+    a *= e;
+    b += e;
+  });
+
+  return a < b ** 2 ? 1 : 0;
+};
 
 console.log(solution([3, 4, 5, 2, 1]));
 //============================================================================================================
